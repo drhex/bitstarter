@@ -3,15 +3,19 @@ var fs = require('fs');
 var app = express();
 app.use(express.logger());
 
-var contentsOfFile = new Buffer(256);
+//var contentsOfFile = new Buffer(256);
 
-fs.readFile('./index.html', 'ascii', function(err, contentsOfFile) {
+
+fs.readFileSync('./index.html', 'ascii', function(err, contentsOfFile) {
   if (err) throw err;
-//  console.log(contentsOfFile.toString('ascii', 0, 100));
+//  console.log(contentsOfFile);
 });
 
+//  console.log(fs.readFileSync('./index.html', null));
+
+
 app.get('/', function(request, response) {
-  response.send('test \n' + contentsOfFile.toString('ascii'));
+  response.send('test 2 \n' + contentsOfFile + '\n test 1 \n' + contentsOfFile.toString('ascii'));
 });
 
 

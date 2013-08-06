@@ -7,10 +7,11 @@ var contentsOfFile = new Buffer(256);
 
 fs.readFile('./index.html', 'ascii', function(err, contentsOfFile) {
   if (err) throw err;
-//  console.log(contentsOfFile.toString());
+//  console.log(contentsOfFile.toString('ascii', 0, 100));
 });
 
 app.get('/', function(request, response) {
+  response.send('test \n');
   response.send(contentsOfFile.toString('ascii'));
 });
 

@@ -3,19 +3,11 @@ var fs = require('fs');
 var app = express();
 app.use(express.logger());
 
-//var contentsOfFile = new Buffer(256);
-
-
-//fs.readFileSync('./index.html', 'ascii' function(err, contentsOfFile) {
-//  if (err) throw err;
-//  console.log(contentsOfFile);
-//});
-
 
 var contentsOfFile = fs.readFileSync('./index.html').toString();
 
 app.get('/', function(request, response) {
-  response.send('test 1 \n' + contentsOfFile );
+  response.send( contentsOfFile );
 });
 
 

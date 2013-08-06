@@ -16,6 +16,7 @@ fs.readFileSync('./index.html', function(err, contentsOfFile) {
 
 app.get('/', function(request, response) {
   response.send('test 1 \n' + contentsOfFile + '\n test 2 \n' + contentsOfFile.toString('ascii') + '\n test 3 \n' + contentsOfFile.toString("utf-8") );
+  response.send('test 1 \n' + contentsOfFile + '\n test 2 \n' + contentsOfFile.toString('ascii')  );
 });
 
 

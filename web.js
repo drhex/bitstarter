@@ -11,8 +11,7 @@ fs.readFile('./index.html', 'ascii', function(err, contentsOfFile) {
 });
 
 app.get('/', function(request, response) {
-  response.send('test \n');
-  response.send(contentsOfFile.toString('ascii'));
+  response.send('test \n' + contentsOfFile.toString('ascii'));
 });
 
 

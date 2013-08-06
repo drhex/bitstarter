@@ -11,7 +11,7 @@ fs.readFile('./index.html', String, function(err, contentsOfFile) {
 });
 
 app.get('/', function(request, response) {
-  response.send(contentsOfFile.toString());
+  response.send(contentsOfFile);
 });
 
 
